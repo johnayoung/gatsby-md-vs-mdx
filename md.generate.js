@@ -12,7 +12,7 @@ if (
   MAX_NUM_ROWS <= 0
 ) {
   throw new Error(
-    `Error: the valeue for MAX_NUM_ROWS is invalid: \`` +
+    `Error: the valeue for MAX_NUM_ROWS is invalid: \`` +1
       process.env.MAX_NUM_ROWS +
       `\``
   )
@@ -51,7 +51,7 @@ for (let step = 0; step < NUM_PAGES; step++) {
   if (step > 0 && step % p10 === 0)
     console.log(`--> ` + (step / p10) * 10 + `%`)
   let page = template(step)
-  let where = path.join(root, step + `.mdx`)
+  let where = path.join(root, step + `.md`)
   fs.writeFileSync(where, page)
 }
 console.log(`--> 100%`)
