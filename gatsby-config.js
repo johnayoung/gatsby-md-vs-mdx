@@ -24,18 +24,18 @@ module.exports = {
         name: `assets`,
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [],
-      },
-    },
     // {
-    //   resolve: `gatsby-plugin-mdx`,
+    //   resolve: `gatsby-transformer-remark`,
     //   options: {
-    //     gatsbyRemarkPlugins: [],
+    //     plugins: [],
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

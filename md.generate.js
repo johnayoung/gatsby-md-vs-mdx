@@ -11,11 +11,7 @@ if (
   !Number.isInteger(MAX_NUM_ROWS) ||
   MAX_NUM_ROWS <= 0
 ) {
-  throw new Error(
-    `Error: the valeue for MAX_NUM_ROWS is invalid: \`` +1
-      process.env.MAX_NUM_ROWS +
-      `\``
-  )
+  throw new Error(`Error: the value for MAX_NUM_ROWS is invalid: `)
 }
 const NUM_PAGES = parseInt(process.env.NUM_PAGES || 1000)
 if (
@@ -51,7 +47,7 @@ for (let step = 0; step < NUM_PAGES; step++) {
   if (step > 0 && step % p10 === 0)
     console.log(`--> ` + (step / p10) * 10 + `%`)
   let page = template(step)
-  let where = path.join(root, step + `.md`)
+  let where = path.join(root, step + `.mdx`)
   fs.writeFileSync(where, page)
 }
 console.log(`--> 100%`)
